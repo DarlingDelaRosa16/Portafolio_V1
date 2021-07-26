@@ -1,9 +1,12 @@
 import React from 'react'
 import Menu from '../Components/Menu/menu';
+import {ThemeProvider} from '../Context/themeContext'
 
 const App = () => {
     return (
-        <Menu></Menu>
+        <ThemeProvider>
+            <Menu/>
+        </ThemeProvider>
     );
 }
  
