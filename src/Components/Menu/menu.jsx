@@ -17,16 +17,16 @@ const Menu = () => {
     }
     return (
         <Router>
-            <MenuBox Gtheme={theme[0]}>
+            <MenuBox generalTheme={theme[0]}>
 
-                <MenuLogo Gtheme={theme[0]}>Darling De la rosa</MenuLogo>
+                <MenuLogo generalTheme={theme[0]}>Darling De la rosa</MenuLogo>
 
                 <NavLink className="navButton" style={{color: theme[1] }} to="/aboutMe">About</NavLink>
                 <NavLink className="navButton" style={{color: theme[1] }} to="/projects">Projects</NavLink>
                 <NavLink className="navButton" style={{color: theme[1] }} to="/contact">Contact</NavLink>
 
-                <MenuButton Gtheme={theme[0]} >ES</MenuButton>
-                <MenuButton Gtheme={theme[0]} onClick={toggleTheme}>Rosa</MenuButton>
+                <MenuButton generalTheme={theme[0]} >ES</MenuButton>
+                <MenuButton generalTheme={theme[0]} onClick={toggleTheme}>Rosa</MenuButton>
 
             </MenuBox>
            
