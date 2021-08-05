@@ -9,7 +9,7 @@ const Projects = () => {
     return (
         <ProjectsBox generalTheme={theme[0]}>
             <ProjectsCard>
-                <ProjectsImg>
+                <ProjectsImg url={"https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2015/09/124181-estos-son-21-lenguajes-programacion-mas-populares-2015.jpg?itok=nN_6Iitk"}>
 
                 </ProjectsImg>
                 <ProjectsInfo generalTheme={theme[0]}>
@@ -17,12 +17,7 @@ const Projects = () => {
                     <ProjectsDescription generalTheme={theme[0]}>Te cuento que estoy creando esto para conseguir un trabajo lo mas pronto posible, Necesito uno donde me emplee haciendo lo que estudie o si no para que espere tanto</ProjectsDescription>
                 </ProjectsInfo>
             </ProjectsCard>
-            <ProjectsCard>
-                
-                <ProjectsInfo>
-                    
-                </ProjectsInfo>
-            </ProjectsCard>
+            
             <ProjectsCard>
                 <ProjectsImg>
 
@@ -31,14 +26,7 @@ const Projects = () => {
                    
                 </ProjectsInfo>
             </ProjectsCard>
-            <ProjectsCard>
-                <ProjectsImg>
-
-                </ProjectsImg>
-                <ProjectsInfo>
-                    
-                </ProjectsInfo>
-            </ProjectsCard>
+            
         </ProjectsBox>
     );
 }
