@@ -27,6 +27,15 @@ const Projects = () => {
                 </ProjectsInfo>
             </ProjectsCard>
             
+            <ProjectsCard>
+                <ProjectsImg>
+
+                </ProjectsImg>
+                <ProjectsInfo>
+                   
+                </ProjectsInfo>
+            </ProjectsCard>
+            
         </ProjectsBox>
     );
 }

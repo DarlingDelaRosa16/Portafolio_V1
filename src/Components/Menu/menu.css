@@ -1,4 +1,5 @@
 .navButton{
+    grid-row:2/3;
     text-decoration: none;
     margin: 16px;
     font-size: 19px;
