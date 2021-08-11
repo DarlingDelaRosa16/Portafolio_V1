@@ -6,7 +6,7 @@ export const MenuBox = styled.div`
     display: inline-block;
     display: grid;
     position: relative;
-    grid-template-rows: 35px 45px;
+    grid-template-rows: 32px 48px;
     grid-template-columns: 1fr auto auto auto auto auto 100px ;
     width: 100%;
     height: 80px;
@@ -14,13 +14,14 @@ export const MenuBox = styled.div`
     background-color: rgba(255, 255, 255, .15);
     backdrop-filter: blur(20px);
     background-size: cover;
-    background-image: url(${(props)=> props.generalTheme ? "https://cdn.pixabay.com/photo/2017/03/27/21/38/sunset-2180346__340.jpg" : "https://cdn.pixabay.com/photo/2016/03/09/15/18/stars-1246590_960_720.jpg" });
-    box-shadow: rgba(255, 255, 255, 0.5) 0px 2px 4px, rgba(255, 255, 255, 0.3) 0px 7px 13px -3px, rgba(255, 255, 255, 0.3) 0px -3px 0px inset;
+    background: ${(props)=> props.generalTheme !== "white" ? "linear-gradient(white, rgb(218, 220, 221))" : "linear-gradient(#ddd,gray, black)" } ;
+    //background-image: url(${(props)=> props.generalTheme ? "https://cdn.pixabay.com/photo/2017/03/27/21/38/sunset-2180346__340.jpg" : "https://cdn.pixabay.com/photo/2016/03/09/15/18/stars-1246590_960_720.jpg" });
+    box-shadow: ${(props)=> props.generalTheme  ? "rgba(0, 0, 0, 0.5) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.3) 0px -3px 0px inset" : "rgba(200, 200, 200, 0.5) 0px 2px 4px, rgba(200, 200, 200, 0.3) 0px 7px 13px -3px, rgba(200, 200, 200, 0.3) 0px -3px 0px inset;"}
     //border-bottom: ${(props)=> props.generalTheme ? "3px solid  #ff8c00": "3px solid  #1e90ff" } ;
 `;
 
 export const MenuLogo = styled.h1`
-    color: ${(props)=> props.generalTheme ? "black": "white" };
+    color: ${(props)=> props.generalTheme};
     display: inline;
     grid-row:2/3;
     margin-left: 100px;
@@ -32,9 +33,9 @@ export const MenuLogo = styled.h1`
 `;
 
 export const MenuButton = styled.button`
-    color: ${(props)=> props.generalTheme ? "black": "white" };
+    color: ${(props)=> props.generalTheme};
     width: auto;
-    font-size: 11px;
+    font-size: 15px;
     margin-top: 10px;
     grid-row:2/3;
     border: none;
@@ -54,7 +55,7 @@ export const AboutBox = styled.div`
     grid-template-columns: 100px 1fr 1fr 100px;
     grid-template-rows:  70px 1fr 1fr;
     min-height: 599px;
-    background-image: url(${(props)=> props.generalTheme ? "https://cdn.pixabay.com/photo/2018/04/05/23/30/sky-3294543__340.jpg" : "https://res.cloudinary.com/practicaldev/image/fetch/s--BuPz-p40--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nphrgz8yfnjylrwfr0yl.png" }); 
+    background-image: url(${(props)=> props.generalTheme ? "https://cdn.pixabay.com/photo/2017/02/15/11/05/texture-2068283_960_720.jpg" : "https://cdn.pixabay.com/photo/2019/12/13/09/46/umbrella-4692572_960_720.jpg" }); 
     background-size: cover;
 `;
 
@@ -67,7 +68,7 @@ export const AboutImg = styled.div`
     grid-row: 1/4;
     border-radius: 5px;
     margin: 10px 0px 10px 0px;
-    background-image: url("https://cdn.pixabay.com/photo/2018/01/30/22/50/forest-3119826_960_720.jpg");
+    background-image:url(${(props)=> props.url}); 
     background-size: cover;
 `;
 export const AboutResumeButtom = styled.button`
@@ -136,9 +137,12 @@ export const AboutLanguage = styled.div`
     background-position-y: ${(props)=> props.posY}; 
     background-size: cover;
     &:hover{
-        transform: scale(1.05, 1.05) 
+        transform: scale(1.05, 1.05);
     }
 `;
+
+
+
 ////////Projects////////////////////////////////
 
 export const ProjectsBox = styled.div`
@@ -147,7 +151,7 @@ export const ProjectsBox = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr) );
     grid-template-rows: auto;
     min-height: 599px;
-    background-image: url(${(props)=> props.generalTheme ? "https://cdn.pixabay.com/photo/2018/04/05/23/30/sky-3294543__340.jpg" : "https://res.cloudinary.com/practicaldev/image/fetch/s--BuPz-p40--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nphrgz8yfnjylrwfr0yl.png" }); 
+    background-image: url(${(props)=> props.generalTheme ? "https://cdn.pixabay.com/photo/2017/02/15/11/05/texture-2068283_960_720.jpg" : "https://cdn.pixabay.com/photo/2019/12/13/09/46/umbrella-4692572_960_720.jpg" }); 
     background-size: cover;
 `;
 
@@ -176,24 +180,42 @@ export const ProjectsImg = styled.div`
 
 export const ProjectsInfo = styled.p`
     grid-column:5/8 ;
+    display: grid;
+    grid-template-rows: auto auto 40px;
+    grid-template-columns: 1fr 1fr;
     border-radius: 5px;
     margin: 2px 2px 7px 5px;
     color: ${(props)=> props.generalTheme ? "white": "black" };
-    background:${(props)=> props.generalTheme ? "linear-gradient(#FF8C00,orange, #ffffff)" : "linear-gradient(gray,grey, #000)" } ;
+    background:${(props)=> props.generalTheme ? "linear-gradient(#ddd,rgb(218, 220, 221), #ffffff)" : "linear-gradient(#ddd,gray,grey, #000)" } ;
    
 `;
 
 export const ProjectsTitle = styled.h1`
+    grid-row: 1/2;
+    margin: 5px;
+    grid-column: 1/3;
     font-size: 20px;
     text-align:center;
     color: ${(props)=> props.generalTheme ? "black": "white" };
 `;
 
 export const ProjectsDescription = styled.p`
+    grid-row: 2/3;
+    margin-top: 0;
+    grid-column: 1/3;
     font-size: 15px;
     text-align:center;
     color: ${(props)=> props.generalTheme ? "black": "white" };
-    
+`;
+
+export const ProjectsLink = styled.button`
+    color: ${(props)=> props.generalTheme ? "black" : "black" };
+    grid-column: ${(props)=> props.column};
+    margin: 5px;
+    grid-row: 3/4;
+    &:hover{
+        cursor: pointer;
+    }
 `;
 
 ////////CONTACT///////////////////////////////
@@ -202,7 +224,7 @@ export const ContactBox = styled.div`
     width: 100%;
     display: grid;
     min-height: 599px;
-    background-image: url(${(props)=> props.generalTheme ? "https://cdn.pixabay.com/photo/2018/04/05/23/30/sky-3294543__340.jpg" : "https://res.cloudinary.com/practicaldev/image/fetch/s--BuPz-p40--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nphrgz8yfnjylrwfr0yl.png" }); 
+    background-image: url(${(props)=> props.generalTheme ? "https://cdn.pixabay.com/photo/2017/02/15/11/05/texture-2068283_960_720.jpg" : "https://cdn.pixabay.com/photo/2019/12/13/09/46/umbrella-4692572_960_720.jpg" }); 
     background-size: cover;
 `;
 
@@ -227,6 +249,7 @@ export const ContactTextBox = styled.input`
     grid-column:${(props)=> props.gridColumn} ;
     grid-row:${(props)=> props.gridRow} ;
     margin: 2% 5% 5% 5%;
+    font-size:20px;
     width: 90%;
     background:rgb(218, 220, 221);
     padding: 5px;
@@ -245,6 +268,7 @@ export const ContactLabel = styled.label`
 
 export const ContactTextArea = styled.textarea`
     grid-column: 2/3;
+    font-size:20px;
     grid-row: 2/5;
     padding: 5px;
     margin: 2% 5% 5% 5%;
@@ -255,7 +279,8 @@ export const ContactTextArea = styled.textarea`
     border: none;
 `;
 
-export const ContactButton = styled(AboutResumeButtom)`
+export const ContactButton = styled(AboutResumeButtom)`    
+    color: ${(props)=> props.generalTheme ? "black": "white" };
     margin-left: 5%;
     grid-column: 2/3;
     grid-row: 5/6;
