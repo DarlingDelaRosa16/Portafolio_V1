@@ -42,7 +42,7 @@ const Menu = () => {
             <Router>
                 <MenuBox generalTheme={theme}>
     
-                    <MenuLogo generalTheme={theme}>Darling De la rosa</MenuLogo>
+                    <MenuLogo generalTheme={theme}>Darling De la rosa Vanderhorst</MenuLogo>
     
                     <NavLink className="navButton" style={{color: theme }} to="/">Sobre Mi</NavLink>
                     <NavLink className="navButton" style={{color: theme }} to="/projects">Proyectos</NavLink>
@@ -73,7 +73,7 @@ const Menu = () => {
             <Router>
                 <MenuBox generalTheme={theme}>
     
-                    <MenuLogo generalTheme={theme}>Darling De la rosa</MenuLogo>
+                    <MenuLogo generalTheme={theme}>Darling De la rosa Vanderhorst</MenuLogo>
     
                     <NavLink className="navButton" style={{color: theme }} to="/">About</NavLink>
                     <NavLink className="navButton" style={{color: theme }} to="/projects">Projects</NavLink>

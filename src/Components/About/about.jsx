@@ -12,7 +12,7 @@ const About = () => {
         return (
             <AboutBox  generalTheme={theme}>
                 
-                <AboutImg url={"https://i.imgur.com/ybuE1m1.jpg"}>
+                <AboutImg posX={"-75px"} posY={"-15px"} url={"https://i.imgur.com/BefHqap.png"}>
                     <AboutResumeButtom>Resume</AboutResumeButtom>
                 </AboutImg>
                 <AboutBackground>
@@ -39,7 +39,7 @@ const About = () => {
         return (
             <AboutBox  generalTheme={theme}>
                 
-                <AboutImg url={"https://i.imgur.com/ybuE1m1.jpg"}>
+                <AboutImg posX={"-75px"} posY={"-15px"} url={"https://i.imgur.com/BefHqap.png"}>
                     <AboutResumeButtom>Resume</AboutResumeButtom>
                 </AboutImg>
                 <AboutBackground>

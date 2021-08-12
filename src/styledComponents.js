@@ -15,7 +15,7 @@ export const MenuBox = styled.div`
     backdrop-filter: blur(20px);
     background-size: cover;
     background: ${(props)=> props.generalTheme !== "white" ? "linear-gradient(white, rgb(218, 220, 221))" : "linear-gradient(#ddd,gray, black)" } ;
-     box-shadow: ${(props)=> props.generalTheme !== "white" ? "rgba(0, 0, 0, 0.5) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.3) 0px -3px 0px inset" : "rgba(200, 200, 200, 0.5) 0px 2px 4px, rgba(200, 200, 200, 0.3) 0px 7px 13px -3px, rgba(200, 200, 200, 0.3) 0px -3px 0px inset;"}
+    box-shadow: ${(props)=> props.generalTheme !== "white" ? "rgba(0, 0, 0, 0.5) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.3) 0px -3px 0px inset" : "rgba(200, 200, 200, 0.5) 0px 2px 4px, rgba(200, 200, 200, 0.3) 0px 7px 13px -3px, rgba(200, 200, 200, 0.3) 0px -3px 0px inset;"}
 `;
 
 export const MenuLogo = styled.h1`
@@ -28,9 +28,7 @@ export const MenuLogo = styled.h1`
     height: 30px;
     margin-top: 10px;   
     border: none;
-    &:hover{
-        cursor: pointer ;
-    }
+    
 `;
 
 export const MenuButton = styled.button`
@@ -63,7 +61,9 @@ export const AboutBox = styled.div`
 export const AboutImg = styled.div`
     width: 99%;
     display: grid;
-    grid-template-rows: 1fr 70px;
+    background-position-x: ${(props)=> props.posX}; 
+    background-position-y: ${(props)=> props.posY};
+    grid-template-rows: 1fr 50px 10px;
     grid-template-columns: 1fr 150px;
     grid-column: 2/3;
     grid-row: 1/4;
@@ -72,11 +72,13 @@ export const AboutImg = styled.div`
     background-image:url(${(props)=> props.url}); 
     background-size: cover;
 `;
-export const AboutResumeButtom = styled.button`
+export const AboutResumeButtom = styled.a`
     width: 130px;
-    height: 50px;
-    background: none;
-    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 5px;
+    color: black;
+    background: linear-gradient(white, gray);
     grid-column: 2/3;
     grid-row: 2/3;
     border-radius: 5px;
@@ -230,13 +232,35 @@ export const ContactContent = styled.div`
     display: grid;
     grid-template-rows: auto 1fr ;
     width: 80%;
-    margin-top: 60px;
+    margin-top: 40px;
     margin-inline:10%;
     height: 400px;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
     border-radius: 5px;
     background-color: rgba(255, 255, 255, .15);
     backdrop-filter: blur(20px);
+`;
+export const ContactContentSocial = styled.div`
+    display: grid;
+    grid-column:1/2;
+    grid-row :5/6;
+    width: 50%;
+    height: 100%;  
+    margin-inline: 5%; 
+    grid-template-columns: repeat(auto-fill, minmax(55px, 1fr) );
+`;
+export const ContactSocialMedias = styled.a`
+    width: 50px;
+    height: 50px;   
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    background-image:url(${(props)=> props.url}); 
+    background-position-x: ${(props)=> props.posX}; 
+    background-position-y: ${(props)=> props.posY}; 
+    background-size: cover;
+    &:hover{
+        transform: scale(1.05, 1.05);
+    }
 `;
 
 export const ContactTitle = styled(AboutTitle)`
@@ -280,6 +304,7 @@ export const ContactTextArea = styled.textarea`
 export const ContactButton = styled(AboutResumeButtom)`    
     color: ${(props)=> props.generalTheme };
     margin-left: 5%;
+    background: none    ;
     grid-column: 2/3;
     grid-row: 5/6;
     height: 40px;
