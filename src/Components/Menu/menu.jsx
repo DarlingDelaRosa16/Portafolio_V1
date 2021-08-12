@@ -44,7 +44,7 @@ const Menu = () => {
     
                     <MenuLogo generalTheme={theme}>Darling De la rosa</MenuLogo>
     
-                    <NavLink className="navButton" style={{color: theme }} to="/aboutMe">Sobre Mi</NavLink>
+                    <NavLink className="navButton" style={{color: theme }} to="/">Sobre Mi</NavLink>
                     <NavLink className="navButton" style={{color: theme }} to="/projects">Proyectos</NavLink>
                     <NavLink className="navButton" style={{color: theme }} to="/contact">Contacto</NavLink>
     
@@ -55,7 +55,7 @@ const Menu = () => {
                
                 <Switch>
     
-                    <Route path="/aboutMe"> 
+                    <Route exact path="/"> 
                         <About/>
                     </Route> 
                     <Route path="/projects"> 
@@ -75,7 +75,7 @@ const Menu = () => {
     
                     <MenuLogo generalTheme={theme}>Darling De la rosa</MenuLogo>
     
-                    <NavLink className="navButton" style={{color: theme }} to="/aboutMe">About</NavLink>
+                    <NavLink className="navButton" style={{color: theme }} to="/">About</NavLink>
                     <NavLink className="navButton" style={{color: theme }} to="/projects">Projects</NavLink>
                     <NavLink className="navButton" style={{color: theme }} to="/contact">Contact</NavLink>
     
@@ -86,7 +86,7 @@ const Menu = () => {
                
                 <Switch>
     
-                    <Route path="/aboutMe"> 
+                    <Route exact path="/"> 
                         <About/>
                     </Route> 
                     <Route path="/projects"> 

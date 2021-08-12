@@ -11,34 +11,34 @@ const Contact = () => {
 
     if(language === "EN"){
         return (
-            <ContactBox generalTheme={theme[0]} >
+            <ContactBox generalTheme={theme} >
                 <ContactContent >
-                    <ContactTitle generalTheme={theme[0]} >Contact me</ContactTitle>
+                    <ContactTitle generalTheme={theme} >Contact me</ContactTitle>
                     <form id="contactInformation">
-                        <ContactLabel generalTheme={theme[0]} gridColumn={"1/2"} gridRow={"1/2"}>Name</ContactLabel>
+                        <ContactLabel generalTheme={theme} gridColumn={"1/2"} gridRow={"1/2"}>Name</ContactLabel>
                         <ContactTextBox gridColumn={"1/2"} gridRow={"2/3"} />
-                        <ContactLabel generalTheme={theme[0]} gridColumn={"1/2"} gridRow={"3/4"}>Email</ContactLabel>
+                        <ContactLabel generalTheme={theme} gridColumn={"1/2"} gridRow={"3/4"}>Email</ContactLabel>
                         <ContactTextBox gridColumn={"1/2"} gridRow={"4/5"}/>
-                        <ContactLabel generalTheme={theme[0]} gridColumn={"2/3"} gridRow={"1/2"}>Description</ContactLabel>
+                        <ContactLabel generalTheme={theme} gridColumn={"2/3"} gridRow={"1/2"}>Description</ContactLabel>
                         <ContactTextArea id="contactArea"/>
-                        <ContactButton generalTheme={theme[0]}>Send</ContactButton>
+                        <ContactButton generalTheme={theme}>Send</ContactButton>
                     </form>
                 </ContactContent>
             </ContactBox>
         );
     }else{
         return (
-            <ContactBox generalTheme={theme[0]} >
+            <ContactBox generalTheme={theme} >
                 <ContactContent >
-                    <ContactTitle generalTheme={theme[0]} >Contactame</ContactTitle>
+                    <ContactTitle generalTheme={theme} >Contáctame</ContactTitle>
                     <form id="contactInformation">
-                        <ContactLabel generalTheme={theme[0]} gridColumn={"1/2"} gridRow={"1/2"}>Nombre</ContactLabel>
+                        <ContactLabel generalTheme={theme} gridColumn={"1/2"} gridRow={"1/2"}>Nombre</ContactLabel>
                         <ContactTextBox gridColumn={"1/2"} gridRow={"2/3"} />
-                        <ContactLabel generalTheme={theme[0]} gridColumn={"1/2"} gridRow={"3/4"}>Correo Electronico</ContactLabel>
+                        <ContactLabel generalTheme={theme} gridColumn={"1/2"} gridRow={"3/4"}>Correo Electronico</ContactLabel>
                         <ContactTextBox gridColumn={"1/2"} gridRow={"4/5"}/>
-                        <ContactLabel generalTheme={theme[0]} gridColumn={"2/3"} gridRow={"1/2"}>Descripción</ContactLabel>
+                        <ContactLabel generalTheme={theme} gridColumn={"2/3"} gridRow={"1/2"}>Descripción</ContactLabel>
                         <ContactTextArea id="contactArea"/>
-                        <ContactButton generalTheme={theme[0]}>Enviar</ContactButton>
+                        <ContactButton generalTheme={theme}>Enviar</ContactButton>
                     </form>
                 </ContactContent>
             </ContactBox>

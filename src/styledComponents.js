@@ -15,9 +15,7 @@ export const MenuBox = styled.div`
     backdrop-filter: blur(20px);
     background-size: cover;
     background: ${(props)=> props.generalTheme !== "white" ? "linear-gradient(white, rgb(218, 220, 221))" : "linear-gradient(#ddd,gray, black)" } ;
-    //background-image: url(${(props)=> props.generalTheme ? "https://cdn.pixabay.com/photo/2017/03/27/21/38/sunset-2180346__340.jpg" : "https://cdn.pixabay.com/photo/2016/03/09/15/18/stars-1246590_960_720.jpg" });
-    box-shadow: ${(props)=> props.generalTheme  ? "rgba(0, 0, 0, 0.5) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.3) 0px -3px 0px inset" : "rgba(200, 200, 200, 0.5) 0px 2px 4px, rgba(200, 200, 200, 0.3) 0px 7px 13px -3px, rgba(200, 200, 200, 0.3) 0px -3px 0px inset;"}
-    //border-bottom: ${(props)=> props.generalTheme ? "3px solid  #ff8c00": "3px solid  #1e90ff" } ;
+     box-shadow: ${(props)=> props.generalTheme !== "white" ? "rgba(0, 0, 0, 0.5) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.3) 0px -3px 0px inset" : "rgba(200, 200, 200, 0.5) 0px 2px 4px, rgba(200, 200, 200, 0.3) 0px 7px 13px -3px, rgba(200, 200, 200, 0.3) 0px -3px 0px inset;"}
 `;
 
 export const MenuLogo = styled.h1`
@@ -30,6 +28,9 @@ export const MenuLogo = styled.h1`
     height: 30px;
     margin-top: 10px;   
     border: none;
+    &:hover{
+        cursor: pointer ;
+    }
 `;
 
 export const MenuButton = styled.button`
@@ -55,7 +56,7 @@ export const AboutBox = styled.div`
     grid-template-columns: 100px 1fr 1fr 100px;
     grid-template-rows:  70px 1fr 1fr;
     min-height: 599px;
-    background-image: url(${(props)=> props.generalTheme ? "https://cdn.pixabay.com/photo/2017/02/15/11/05/texture-2068283_960_720.jpg" : "https://cdn.pixabay.com/photo/2019/12/13/09/46/umbrella-4692572_960_720.jpg" }); 
+    background-image: url(${(props)=> props.generalTheme !== "white" ? "https://cdn.pixabay.com/photo/2017/02/15/11/05/texture-2068283_960_720.jpg" : "https://cdn.pixabay.com/photo/2019/12/13/09/46/umbrella-4692572_960_720.jpg" }); 
     background-size: cover;
 `;
 
@@ -93,7 +94,7 @@ export const AboutInfo = styled.div`
     text-align:justify;
     margin-inline: 10%;
     margin-top:10px;
-    color:${(props)=> props.generalTheme ? "black": "white" };
+    color:${(props)=> props.generalTheme };
     font-size: 21px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     letter-spacing: 1px;
@@ -116,7 +117,7 @@ export const AboutTitle = styled.h1`
     grid-column: 2/3;
     grid-row:1/2;
     text-align:center;
-    color:${(props)=> props.generalTheme ? "black": "white" };
+    color:${(props)=> props.generalTheme };
 `;
 export const AboutKnowledge = styled(AboutInfo)`
     grid-row: 3/4;
@@ -141,8 +142,6 @@ export const AboutLanguage = styled.div`
     }
 `;
 
-
-
 ////////Projects////////////////////////////////
 
 export const ProjectsBox = styled.div`
@@ -151,7 +150,7 @@ export const ProjectsBox = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr) );
     grid-template-rows: auto;
     min-height: 599px;
-    background-image: url(${(props)=> props.generalTheme ? "https://cdn.pixabay.com/photo/2017/02/15/11/05/texture-2068283_960_720.jpg" : "https://cdn.pixabay.com/photo/2019/12/13/09/46/umbrella-4692572_960_720.jpg" }); 
+    background-image: url(${(props)=> props.generalTheme !== "white" ? "https://cdn.pixabay.com/photo/2017/02/15/11/05/texture-2068283_960_720.jpg" : "https://cdn.pixabay.com/photo/2019/12/13/09/46/umbrella-4692572_960_720.jpg" }); 
     background-size: cover;
 `;
 
@@ -185,9 +184,8 @@ export const ProjectsInfo = styled.p`
     grid-template-columns: 1fr 1fr;
     border-radius: 5px;
     margin: 2px 2px 7px 5px;
-    color: ${(props)=> props.generalTheme ? "white": "black" };
-    background:${(props)=> props.generalTheme ? "linear-gradient(#ddd,rgb(218, 220, 221), #ffffff)" : "linear-gradient(#ddd,gray,grey, #000)" } ;
-   
+    color: ${(props)=> props.generalTheme};
+    background:${(props)=> props.generalTheme !== "white" ? "linear-gradient(#ddd,rgb(218, 220, 221), #ffffff)" : "linear-gradient(gray, #000)" } ;
 `;
 
 export const ProjectsTitle = styled.h1`
@@ -196,7 +194,7 @@ export const ProjectsTitle = styled.h1`
     grid-column: 1/3;
     font-size: 20px;
     text-align:center;
-    color: ${(props)=> props.generalTheme ? "black": "white" };
+    color: ${(props)=> props.generalTheme};
 `;
 
 export const ProjectsDescription = styled.p`
@@ -205,11 +203,11 @@ export const ProjectsDescription = styled.p`
     grid-column: 1/3;
     font-size: 15px;
     text-align:center;
-    color: ${(props)=> props.generalTheme ? "black": "white" };
+    color: ${(props)=> props.generalTheme};
 `;
 
 export const ProjectsLink = styled.button`
-    color: ${(props)=> props.generalTheme ? "black" : "black" };
+    color:  "black";
     grid-column: ${(props)=> props.column};
     margin: 5px;
     grid-row: 3/4;
@@ -224,7 +222,7 @@ export const ContactBox = styled.div`
     width: 100%;
     display: grid;
     min-height: 599px;
-    background-image: url(${(props)=> props.generalTheme ? "https://cdn.pixabay.com/photo/2017/02/15/11/05/texture-2068283_960_720.jpg" : "https://cdn.pixabay.com/photo/2019/12/13/09/46/umbrella-4692572_960_720.jpg" }); 
+    background-image: url(${(props)=> props.generalTheme !== "white" ? "https://cdn.pixabay.com/photo/2017/02/15/11/05/texture-2068283_960_720.jpg" : "https://cdn.pixabay.com/photo/2019/12/13/09/46/umbrella-4692572_960_720.jpg" }); 
     background-size: cover;
 `;
 
@@ -261,7 +259,7 @@ export const ContactTextBox = styled.input`
 export const ContactLabel = styled.label`
     font-size: 20px;
     margin-left: 5%;
-    color: ${(props)=> props.generalTheme ? "black": "white" };
+    color: ${(props)=> props.generalTheme };
     grid-column:${(props)=> props.gridColumn} ;
     grid-row:${(props)=> props.gridRow} ;
 `;
@@ -280,7 +278,7 @@ export const ContactTextArea = styled.textarea`
 `;
 
 export const ContactButton = styled(AboutResumeButtom)`    
-    color: ${(props)=> props.generalTheme ? "black": "white" };
+    color: ${(props)=> props.generalTheme };
     margin-left: 5%;
     grid-column: 2/3;
     grid-row: 5/6;
