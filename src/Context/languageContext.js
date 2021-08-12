@@ -3,9 +3,14 @@ import React, { createContext, useReducer, useState } from 'react'
 const LanguageContext = createContext();  
 
 const LanguageProvider = ( {children} ) => {
+    let lang = ""
+    if(localStorage.getItem("language") !== undefined){
+        lang = localStorage.getItem("language")
+    }else{
+        localStorage.setItem("language", "EN")
+    }
 
-    const [language, setLanguage] = useState("EN")
-    localStorage.setItem("language", language)
+    const [language, setLanguage] = useState(lang)
     return (
         <LanguageContext.Provider value={[setLanguage, language]}>
             {children}
