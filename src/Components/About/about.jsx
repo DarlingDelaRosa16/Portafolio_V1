@@ -48,7 +48,6 @@ const About = () => {
                         Hola. Soy Darling De la rosa desarrollador de software y tecnico avanzado graduado del ITSC. Estoy enfocado en tecnologias relacionadas con JavaScript, Me mantengo creando proyectos y practicas personales utilizando diferentes tecnologias para mejorar mis habilidades, Quiero contribuir con mi tiempo, esfuerzo y conocimiento en el desarrollo, actualización y administración de aplicaciones web. Algunas de mis habilidades son:
                     </AboutInfo>
                     <AboutKnowledge>
-    
                         <AboutLanguage posY={"-14px"} url={"https://i.imgur.com/o883GIL.png"}/>
                         <AboutLanguage posX={"-28px"} posY={"-14px"} url={"https://i.imgur.com/lstWdYB.png"}/>
                         <AboutLanguage url={"https://i.imgur.com/kdPSoJa.png"}/>

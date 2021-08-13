@@ -15,7 +15,7 @@ const Projects = () => {
     
                     <ProjectsInfo generalTheme={theme}>
                         <ProjectsTitle generalTheme={theme}>My Comunity app</ProjectsTitle>
-                        <ProjectsDescription generalTheme={theme}>This aplication is for read news about whatever topic</ProjectsDescription>
+                        <ProjectsDescription generalTheme={theme}>This aplication is for post news about topics and comunities. This was create in Reat.js using Hooks and Node.js using Express. The purpose was only for practice.</ProjectsDescription>
                         <ProjectsLink generalTheme={theme} column={"1/2"}>Github</ProjectsLink>
                         <ProjectsLink generalTheme={theme} column={"2/3"}>Live</ProjectsLink>
                     </ProjectsInfo>
@@ -41,7 +41,7 @@ const Projects = () => {
     
                     <ProjectsInfo generalTheme={theme}>
                         <ProjectsTitle generalTheme={theme}>My Comunity app</ProjectsTitle>
-                        <ProjectsDescription generalTheme={theme}>Esta aplicacion es para leer noticias de cualquier tema</ProjectsDescription>
+                        <ProjectsDescription generalTheme={theme}>Esta aplicacion es para publicar y leer noticias sobre cualquier Tema. Fue creada utilizando React.js con Hooks y Node.js con Express. El proposito para crearla fue practicar</ProjectsDescription>
                         <ProjectsLink generalTheme={theme} column={"1/2"}>Github</ProjectsLink>
                         <ProjectsLink generalTheme={theme} column={"2/3"}>Ver app</ProjectsLink>
                     </ProjectsInfo>
