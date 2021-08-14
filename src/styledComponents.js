@@ -15,20 +15,72 @@ export const MenuBox = styled.div`
     backdrop-filter: blur(20px);
     background-size: cover;
     background: ${(props)=> props.generalTheme !== "white" ? "linear-gradient(white, rgb(218, 220, 221))" : "linear-gradient(#ddd,gray, black)" } ;
-    box-shadow: ${(props)=> props.generalTheme !== "white" ? "rgba(0, 0, 0, 0.5) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.3) 0px -3px 0px inset" : "rgba(200, 200, 200, 0.5) 0px 2px 4px, rgba(200, 200, 200, 0.3) 0px 7px 13px -3px, rgba(200, 200, 200, 0.3) 0px -3px 0px inset;"}
+    box-shadow: ${(props)=> props.generalTheme !== "white" ? "rgba(0, 0, 0, 0.5) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.3) 0px -3px 0px inset" : "rgba(200, 200, 200, 0.5) 0px 2px 4px, rgba(200, 200, 200, 0.3) 0px 7px 13px -3px, rgba(200, 200, 200, 0.3) 0px -3px 0px inset;"};
+    @media screen and (max-width: 1220px){
+        grid-template-columns: 1fr auto auto auto auto auto 50px ;
+    }
+    @media (max-width: 920px){
+        grid-template-columns: 1fr auto auto auto auto auto 20px ;
+    }  
+    @media (max-width: 880px){
+        grid-template-columns: 1fr auto auto auto auto auto 5px ;
+    }  
+
+`;
+
+export const MenuButtonDropDown = styled.button`
+    display:none;
+    color: ${(props)=> props.generalTheme};
+    width: auto;
+    margin-right:10px;
+    margin-left: 10px;
+    font-size: 20px;
+    grid-row:2/3;
+    border: none;
+    background: none;
+    &:hover{
+        cursor: pointer ;
+    }
+    @media (max-width: 760px){
+        display: block;
+    }
+    
+`;
+
+export const MenuBoxDropDown = styled.div`
+    visibility: ${(props)=> props.see ? "visible" : "hidden"};
+    width: 300px;
+    position: absolute;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    z-index: 1;
+    right: -1px;
+    margin-top: -3px;
+    border: 1px solid black;
+    background: ${(props)=> props.generalTheme !== "white" ? "linear-gradient(white, rgb(218, 220, 221))" : "linear-gradient(gray, black)" } ;
+    @media (min-width: 760px){
+        display: none;
+    }
 `;
 
 export const MenuLogo = styled.h1`
     color: ${(props)=> props.generalTheme};
     display: inline;
     grid-row:2/3;
-    margin-left: 100px;
-    padding-left: 10px; 
+    margin-left: 100px; 
     font-size: 21px;
     height: 30px;
     margin-top: 10px;   
     border: none;
-    
+    @media (max-width: 1220px){
+        margin-left: 50px;
+    }
+    @media (max-width: 920px){
+        margin-left: 20px;
+    }
+    @media (max-width: 388px){
+        grid-row:1/3;
+    }
 `;
 
 export const MenuButton = styled.button`
@@ -44,6 +96,12 @@ export const MenuButton = styled.button`
     &:hover{
         cursor: pointer ;
     }
+    @media (max-width: 760px){
+        display: ${(props)=> props.display};
+        grid-row: 4/5;
+        margin-bottom: 10px;
+    }
+    
 `;
 
 ////////ABOUTME//////////////////////////////////
@@ -56,6 +114,16 @@ export const AboutBox = styled.div`
     min-height: 599px;
     background-image: url(${(props)=> props.generalTheme !== "white" ? "https://cdn.pixabay.com/photo/2017/02/15/11/05/texture-2068283_960_720.jpg" : "https://cdn.pixabay.com/photo/2019/12/13/09/46/umbrella-4692572_960_720.jpg" }); 
     background-size: cover;
+    @media (max-width: 1220px){
+        grid-template-columns: 50px 1fr 1fr 50px;
+    }
+    @media (max-width: 920px){
+        grid-template-columns: 20px 1fr 1fr 20px;
+    }
+    @media (max-width: 880px){
+        grid-template-columns: 5px 1fr 1fr 5px;
+    }
+    
 `;
 
 export const AboutImg = styled.div`
@@ -71,12 +139,19 @@ export const AboutImg = styled.div`
     margin: 10px 0px 10px 0px;
     background-image:url(${(props)=> props.url}); 
     background-size: cover;
-`;
+    @media (max-width: 760px){
+        width: 96%;
+        margin-left:2%;
+        grid-column: 2/4;
+        grid-row: 1/3;
+    }
+`
 export const AboutResumeButtom = styled.a`
     width: 130px;
     font-size: 20px;
     text-align: center;
     padding-top: 5px;
+    text-decoration: none;
     color: black;
     background: linear-gradient(white, gray);
     grid-column: 2/3;
@@ -85,7 +160,7 @@ export const AboutResumeButtom = styled.a`
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     &:hover{
         transform: scale(1.05, 1.05); 
-        cursor: pointer ;
+        cursor: pointer;
     }
 `;
 
@@ -100,17 +175,29 @@ export const AboutInfo = styled.div`
     font-size: 21px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     letter-spacing: 1px;
-    
+    @media (max-width: 426px){
+        width: 96%;
+        margin-inline: 2%;
+    }
 `;
 
 export const AboutBackground = styled.div`
     grid-column: 3/4;
+    padding-bottom: 10px;
     margin:10px;
     grid-row: 1/4;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
     border-radius: 5px;
     background-color: rgba(255, 255, 255, .25);
     backdrop-filter: blur(20px);
+    @media (max-width: 760px){
+        width: 96%;
+        margin-left:2%;
+        grid-column: 2/4;
+        grid-row: 3/5;
+    }
+    
+    
 `;
 export const AboutTitle = styled.h1`
     font-size: 25px;
@@ -128,12 +215,17 @@ export const AboutKnowledge = styled(AboutInfo)`
     margin-inline: 10%;
     grid-template-columns: repeat(auto-fill, minmax(80px, 1fr) );
     grid-template-rows:repeat(auto-fill, minmax(90px, 1fr) ) ;
+    @media (max-width: 426px){
+        width: 96%;
+        margin-inline: 2%;
+    }
 `;
 
 export const AboutLanguage = styled.div`
     width: 75px;
     height: 75px;    
     border-radius: 5px;
+    margin-bottom: 10px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     background-image:url(${(props)=> props.url}); 
     background-position-x: ${(props)=> props.posX}; 
@@ -141,6 +233,9 @@ export const AboutLanguage = styled.div`
     background-size: cover;
     &:hover{
         transform: scale(1.05, 1.05);
+    }
+    @media (max-width: 426px){
+       margin-left: 7.5px;
     }
 `;
 
@@ -154,6 +249,9 @@ export const ProjectsBox = styled.div`
     min-height: 599px;
     background-image: url(${(props)=> props.generalTheme !== "white" ? "https://cdn.pixabay.com/photo/2017/02/15/11/05/texture-2068283_960_720.jpg" : "https://cdn.pixabay.com/photo/2019/12/13/09/46/umbrella-4692572_960_720.jpg" }); 
     background-size: cover;
+    @media (max-width: 399px){
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) );
+    }
 `;
 
 export const ProjectsCard = styled.div`
@@ -163,10 +261,13 @@ export const ProjectsCard = styled.div`
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     width:95%;
-    height: 280px;
+    height: 285px;
     margin: 10px;
     &:hover{
         transform: scale(1.01, 1.01) 
+    }
+    @media (max-width: 426px){
+        grid-template-rows: 1fr 1fr;
     }
 `;
 
@@ -177,6 +278,12 @@ export const ProjectsImg = styled.div`
     grid-column:1/5 ;
     background-image:url(${(props)=> props.url}); 
     background-size: cover;
+    @media (max-width: 426px){
+        margin:0;
+        border-radius: 5px 5px 0 0;
+        grid-column:1/8 ;
+        grid-row:1/2;
+    }
 `;
 
 export const ProjectsInfo = styled.p`
@@ -188,6 +295,12 @@ export const ProjectsInfo = styled.p`
     margin: 2px 2px 7px 5px;
     color: ${(props)=> props.generalTheme};
     background:${(props)=> props.generalTheme !== "white" ? "linear-gradient(#ddd,rgb(218, 220, 221), #ffffff)" : "linear-gradient(gray, #000)" } ;
+    @media (max-width: 426px){
+        margin:0;
+        border-radius: 0 0 5px 5px ;
+        grid-column:1/8 ;
+        grid-row:2/3;
+    }
 `;
 
 export const ProjectsTitle = styled.h1`
@@ -239,6 +352,18 @@ export const ContactContent = styled.div`
     border-radius: 5px;
     background-color: rgba(255, 255, 255, .15);
     backdrop-filter: blur(20px);
+    @media screen and (max-width: 1220px){
+        width: 90%;
+        margin-inline:5%;
+    }
+    @media (max-width: 920px){
+        width: 96%;
+        margin-inline:2%;
+    }  
+    @media (max-width: 690px){
+        grid-template-rows: 50px auto auto ;
+        min-height: 520px;
+    }   
 `;
 export const ContactContentSocial = styled.div`
     display: grid;
@@ -248,10 +373,21 @@ export const ContactContentSocial = styled.div`
     height: 100%;  
     margin-inline: 5%; 
     grid-template-columns: repeat(auto-fill, minmax(55px, 1fr) );
+    @media (max-width: 690px){
+        grid-column:2/3;
+        grid-row: 8/10;
+        width: 100%;
+    } 
+    @media (max-width: 380px){
+        grid-column:1/3;
+        grid-row: 10/11;
+        width: 100%;        
+        margin-top: 10px;
+    } 
 `;
 export const ContactSocialMedias = styled.a`
-    width: 50px;
-    height: 50px;   
+    width: 45px;
+    height: 45px;   
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     background-image:url(${(props)=> props.url}); 
@@ -261,10 +397,15 @@ export const ContactSocialMedias = styled.a`
     &:hover{
         transform: scale(1.05, 1.05);
     }
+    
 `;
 
 export const ContactTitle = styled(AboutTitle)`
     grid-column: 1/3;
+    @media (max-width: 690px){
+        margin: 0;
+        width: 100%;
+    } 
 `;
 
 export const ContactTextBox = styled.input`
@@ -278,6 +419,10 @@ export const ContactTextBox = styled.input`
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     border: none;
+    @media (max-width: 690px){
+        grid-column:1/3;
+        margin: 0% 2% 2% 2%;
+    }
 `;
 
 export const ContactLabel = styled.label`
@@ -286,6 +431,11 @@ export const ContactLabel = styled.label`
     color: ${(props)=> props.generalTheme };
     grid-column:${(props)=> props.gridColumn} ;
     grid-row:${(props)=> props.gridRow} ;
+    
+    @media (max-width: 690px){
+        grid-column:${(props)=> props.gridC} ;
+        grid-row:${(props)=> props.gridR} ;
+    }
 `;
 
 export const ContactTextArea = styled.textarea`
@@ -299,6 +449,13 @@ export const ContactTextArea = styled.textarea`
     background:rgb(218, 220, 221);
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     border: none;
+    @media (max-width: 690px){
+        grid-column:1/3;
+        grid-row: 7/8;
+        margin: 0% 2% 2% 2%;
+        height: 100px;
+    }
+    
 `;
 
 export const ContactButton = styled(AboutResumeButtom)`    
@@ -308,4 +465,14 @@ export const ContactButton = styled(AboutResumeButtom)`
     grid-column: 2/3;
     grid-row: 5/6;
     height: 40px;
+    @media (max-width: 690px){
+        grid-column:1/2;
+        grid-row: 8/10;
+    }
+    @media (max-width: 380px){
+        grid-column:1/2;
+        margin-top: 10px;
+        grid-row: 8/10;
+        width: 96%;
+    } 
 `;

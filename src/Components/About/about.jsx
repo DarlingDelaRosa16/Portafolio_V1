@@ -2,6 +2,7 @@ import React, {useContext} from 'react'
 import { AboutBox, AboutImg, AboutInfo, AboutKnowledge, AboutLanguage, AboutTooltip, AboutTitle, AboutBackground, AboutResumeButtom } from '../../styledComponents';
 import ThemeContext from '../../Context/themeContext'
 import LanguageContext from '../../Context/languageContext'
+import resume from '../../resume/DarlingDeLaRosaCV.pdf'
 
 const About = () => {
 
@@ -13,10 +14,10 @@ const About = () => {
             <AboutBox  generalTheme={theme}>
                 
                 <AboutImg posX={"-75px"} posY={"-15px"} url={"https://i.imgur.com/BefHqap.png"}>
-                    <AboutResumeButtom>Resume</AboutResumeButtom>
+                    <AboutResumeButtom href={resume} target='_blank' rel="noreferrer" >Resume</AboutResumeButtom>
                 </AboutImg>
                 <AboutBackground>
-                    <AboutTitle generalTheme={theme} >About Me</AboutTitle>
+                    <AboutTitle generalTheme={theme}>About Me</AboutTitle>
                     <AboutInfo generalTheme={theme} >
                         Hello. Im Darling De la rosa a software developer and advanced technician graduated from ITSC. Im focused in tecnologies with JavaScript and I try to impruve my skills creating projects and using news tecnologies, I want to contribute with my time, effort and knowledge in developming, updating and administrating web apps. Some of my skill are:
                     </AboutInfo>
