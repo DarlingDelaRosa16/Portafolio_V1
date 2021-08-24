@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-/////////MENU////////////////////////////////////
+/////////MENU//////////////////////
 
 export const MenuBox = styled.div`
     display: inline-block;
@@ -104,7 +104,7 @@ export const MenuButton = styled.button`
     
 `;
 
-////////ABOUTME//////////////////////////////////
+////////ABOUTME////////////////////////
 
 export const AboutBox = styled.div`
     width: 100%;
@@ -231,9 +231,6 @@ export const AboutLanguage = styled.div`
     background-position-x: ${(props)=> props.posX}; 
     background-position-y: ${(props)=> props.posY}; 
     background-size: cover;
-    &:hover{
-        transform: scale(1.05, 1.05);
-    }
     @media (max-width: 426px){
        margin-left: 7.5px;
     }
@@ -263,9 +260,6 @@ export const ProjectsCard = styled.div`
     width:95%;
     height: 285px;
     margin: 10px;
-    &:hover{
-        transform: scale(1.01, 1.01) 
-    }
     @media (max-width: 426px){
         grid-template-rows: 1fr 1fr;
     }
@@ -328,6 +322,7 @@ export const ProjectsLink = styled.button`
     grid-row: 3/4;
     &:hover{
         cursor: pointer;
+        transform: scale(1.04, 1.04);
     }
 `;
 
