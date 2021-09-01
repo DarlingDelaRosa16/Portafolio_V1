@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import { AboutBox, AboutImg, AboutInfo, AboutKnowledge, AboutLanguage, AboutTooltip, AboutTitle, AboutBackground, AboutResumeButtom } from '../../styledComponents';
+import { AboutBox, AboutImg, AboutInfo, AboutKnowledge, AboutLanguage, AboutTitle, AboutBackground, AboutResumeButtom } from '../../styledComponents';
 import ThemeContext from '../../Context/themeContext'
 import LanguageContext from '../../Context/languageContext'
 import resume from '../../resume/DarlingDeLaRosaCV.pdf'
