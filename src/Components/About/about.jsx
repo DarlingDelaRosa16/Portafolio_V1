@@ -6,8 +6,8 @@ import resume from '../../resume/DarlingDeLaRosaCV.pdf'
 
 const About = () => {
 
-    const [setTheme, theme] = useContext(ThemeContext) 
-    const [setLanguage, language] = useContext(LanguageContext)
+    const [/*setTheme*/, theme] = useContext(ThemeContext) 
+    const [/*setLanguage*/, language] = useContext(LanguageContext)
 
     if(language ==="EN"){
         return (

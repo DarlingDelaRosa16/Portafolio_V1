@@ -6,8 +6,8 @@ import LanguageContext from '../../Context/languageContext'
 
 const Contact = () => {
     
-    const [setTheme, theme] = useContext(ThemeContext)
-    const [setLanguage, language] = useContext(LanguageContext)
+    const [/*setTheme*/, theme] = useContext(ThemeContext)
+    const [/*setLanguage*/, language] = useContext(LanguageContext)
 
     if(language === "EN"){
         return (
