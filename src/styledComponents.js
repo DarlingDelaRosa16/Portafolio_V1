@@ -67,6 +67,7 @@ export const MenuLogo = styled.h1`
     color: ${(props)=> props.generalTheme};
     display: inline;
     grid-row:2/3;
+    font-family: helvetica;
     margin-left: 100px; 
     font-size: 21px;
     height: 30px;

@@ -2,7 +2,6 @@ import React, {useContext} from 'react'
 import { AboutBox, AboutImg, AboutInfo, AboutKnowledge, AboutLanguage, AboutTitle, AboutBackground, AboutResumeButtom } from '../../styledComponents';
 import ThemeContext from '../../Context/themeContext'
 import LanguageContext from '../../Context/languageContext'
-import resume from '../../resume/DarlingDeLaRosaCV.pdf'
 
 const About = () => {
 
@@ -14,7 +13,7 @@ const About = () => {
             <AboutBox  generalTheme={theme}>
                 
                 <AboutImg posX={"-75px"} posY={"-15px"} url={"https://i.imgur.com/BefHqap.png"}>
-                    <AboutResumeButtom href={resume} target='_blank' rel="noreferrer" >Resume</AboutResumeButtom>
+                    
                 </AboutImg>
                 <AboutBackground>
                     <AboutTitle generalTheme={theme}>About Me</AboutTitle>
@@ -41,7 +40,7 @@ const About = () => {
             <AboutBox  generalTheme={theme}>
                 
                 <AboutImg posX={"-75px"} posY={"-15px"} url={"https://i.imgur.com/BefHqap.png"}>
-                    <AboutResumeButtom>Resume</AboutResumeButtom>
+                    
                 </AboutImg>
                 <AboutBackground>
                     <AboutTitle generalTheme={theme} >Sobre Mi</AboutTitle>
